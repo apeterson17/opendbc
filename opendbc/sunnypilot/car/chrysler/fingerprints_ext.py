@@ -1,8 +1,14 @@
+"""
+Copyright (c) 2021-, Haibin Wen, sunnypilot, and a number of other contributors.
+
+This file is part of sunnypilot and is licensed under the MIT License.
+See the LICENSE.md file in the root directory for more details.
+"""
+
 from opendbc.car.structs import CarParams
 from opendbc.car.chrysler.values import CAR
 
 Ecu = CarParams.Ecu
-
 
 FW_VERSIONS_EXT = {
   CAR.RAM_1500_5TH_GEN: {
@@ -22,6 +28,19 @@ FW_VERSIONS_EXT = {
       b'68360085AF',
       b'68360086AL',
       b'68502996AC',
+    ],
+  },
+
+  CAR.RAM_HD_5TH_GEN: {
+    # Added: 2024 RAM 2500 (VIN: 3C6UR4HJ9RG206624)
+    (Ecu.combinationMeter, 0x742, None): [
+      b'68628472AC',
+    ],
+    (Ecu.engine, 0x7e0, None): [
+      b'68617375AB ',
+    ],
+    (Ecu.transmission, 0x7e1, None): [
+      b'68617338AA',
     ],
   },
 }
