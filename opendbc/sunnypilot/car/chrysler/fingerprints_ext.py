@@ -33,6 +33,11 @@ FW_VERSIONS_EXT = {
 
   CAR.RAM_HD_5TH_GEN: {
     # Added: 2024 RAM 2500 (VIN: 3C6UR4HJ9RG206624)
+    # fuzzyFingerprint was True due to these missing entries.
+    # combinationMeter: 68628472AC is a new variant (existing DB has 68628474AB)
+    # engine: 68617375AB  is a new 2024 firmware (note trailing space)
+    # transmission: 68617338AA — RAM HD now reports a transmission ECU on 0x7e1
+    #   (this ECU was not present in earlier model years / not previously in the DB)
     (Ecu.combinationMeter, 0x742, None): [
       b'68628472AC',
     ],
